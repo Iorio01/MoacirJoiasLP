@@ -1,0 +1,375 @@
+/* ============================================
+   MOACIR JOIAS — Landing Page Styles
+   Fonts: Gilroy Medium / Ultralight (Raleway), Montserrat Light
+   ============================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg:          #fbfbfb;
+  --text-white:  #ffffff;
+  --text-gray:   #6a6c6c;
+  --btn:         #c8beb1;
+  --dark:        #2a2420;
+
+  --font-gilroy:     'Raleway', sans-serif;
+  --font-montserrat: 'Montserrat', sans-serif;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text-gray);
+  font-family: var(--font-montserrat);
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 28px 24px 22px;
+  background: var(--bg);
+  width: 100%;
+}
+
+.logo-img {
+  height: 64px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* ============================================
+   HERO SECTION — full viewport
+   ============================================ */
+.hero {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: calc(100vh - 121px); /* 100vh minus header height */
+}
+
+.hero-image-wrapper {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 48%;
+  display: block;
+}
+
+.hero-content {
+  flex-shrink: 0;
+  width: 100%;
+  padding: 24px 48px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  background: var(--bg);
+}
+
+.hero-title {
+  font-family: var(--font-gilroy);
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  line-height: 1.4;
+  color: var(--dark);
+  text-transform: uppercase;
+}
+
+.btn-vip {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 32px;
+  background: var(--btn);
+  color: var(--text-white);
+  text-decoration: none;
+  font-family: var(--font-gilroy);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  border-radius: 2px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background 0.2s ease;
+}
+
+.btn-vip:hover {
+  background: #b5a99b;
+}
+
+.btn-arrow {
+  font-size: 20px;
+  line-height: 1;
+}
+
+/* ============================================
+   ABOUT SECTION — full viewport width
+   ============================================ */
+.about {
+  position: relative;
+  width: 100%;
+  min-height: 55vh;
+  background-color: #3d2e25;
+  background-image: url('images/Foto bracelete.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-overlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 26px;
+  padding: 80px 48px;
+  text-align: center;
+  background: rgba(42, 28, 18, 0.62);
+  width: 100%;
+  justify-content: center;
+}
+
+.about-logo-img {
+  height: 38px;
+  width: auto;
+  filter: brightness(0) invert(1);
+  opacity: 0.9;
+}
+
+.about-text {
+  font-family: var(--font-gilroy);
+  font-size: 16px;
+  font-weight: 200;
+  line-height: 1.9;
+  color: var(--text-white);
+  letter-spacing: 0.4px;
+  max-width: 600px;
+}
+
+/* ============================================
+   SERVICE SECTIONS — full viewport width
+   ============================================ */
+.service {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  width: 100%;
+  height: 60vh;
+  background: var(--bg);
+}
+
+.service-image {
+  flex: 0 0 50%;
+  max-width: 50%;
+  overflow: hidden;
+  position: relative;
+}
+
+.service-image img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+.service-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 56px 72px;
+  gap: 18px;
+}
+
+.service-title {
+  font-family: var(--font-gilroy);
+  font-size: 38px;
+  font-weight: 500;
+  letter-spacing: 4px;
+  color: var(--dark);
+  text-transform: uppercase;
+}
+
+.service-desc {
+  font-family: var(--font-montserrat);
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--text-gray);
+  line-height: 1.7;
+  max-width: 280px;
+}
+
+.btn-outline {
+  display: inline-block;
+  padding: 14px 36px;
+  border: none;
+  background: var(--btn);
+  color: var(--text-white);
+  text-decoration: none;
+  font-family: var(--font-montserrat);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 8px;
+  align-self: flex-start;
+  border-radius: 50px;
+  transition: background 0.2s, opacity 0.2s;
+}
+
+.btn-outline:hover {
+  opacity: 0.85;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  padding: 52px 24px 42px;
+  border-top: 1px solid #ece8e3;
+  width: 100%;
+}
+
+.footer-address {
+  font-family: var(--font-montserrat);
+  font-size: 11px;
+  font-weight: 300;
+  color: var(--text-gray);
+  text-align: center;
+  line-height: 2;
+  letter-spacing: 0.3px;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  transition: opacity 0.2s;
+  text-decoration: none;
+}
+
+.social-link svg {
+  width: 38px;
+  height: 38px;
+}
+
+.social-link:hover {
+  opacity: 0.6;
+}
+
+/* ============================================
+   RESPONSIVE — TABLET
+   ============================================ */
+@media (max-width: 900px) {
+  .hero-content {
+    padding: 28px 32px 36px;
+  }
+
+  .service-content {
+    padding: 40px 36px;
+  }
+
+  .service-title {
+    font-size: 22px;
+  }
+}
+
+/* ============================================
+   RESPONSIVE — MOBILE
+   ============================================ */
+@media (max-width: 600px) {
+  .hero {
+    min-height: 100vh;
+  }
+
+  .hero-image-wrapper {
+    min-height: 55vh;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 28px 24px 36px;
+    gap: 20px;
+  }
+
+  .hero-title {
+    font-size: 18px;
+  }
+
+  .about-overlay {
+    padding: 52px 24px;
+  }
+
+  .about-text {
+    font-size: 14px;
+  }
+
+  .service {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .service--vendas {
+    flex-direction: column-reverse;
+  }
+
+  .service-image {
+    flex: none;
+    max-width: 100%;
+    width: 100%;
+    height: 50vw;
+    min-height: 220px;
+    position: relative;
+  }
+
+  .service-content {
+    padding: 36px 24px;
+  }
+
+  .service-title {
+    font-size: 20px;
+  }
+}
