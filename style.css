@@ -57,54 +57,78 @@ body {
    HERO SECTION — full viewport
    ============================================ */
 .hero {
-  display: flex;
-  flex-direction: column;
+  position: relative;
   width: 100%;
-  height: calc(100vh - 121px); /* 100vh minus header height */
+  height: calc(100vh - 121px);
+  overflow: hidden;
 }
 
 .hero-image-wrapper {
-  flex: 1;
-  min-height: 0;
-  width: 100%;
-  overflow: hidden;
+  position: absolute;
+  inset: 0;
 }
 
 .hero-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 48%;
+  object-position: center 40%;
   display: block;
 }
 
 .hero-content {
-  flex-shrink: 0;
-  width: 100%;
-  padding: 24px 48px;
+  position: absolute;
+  inset: 0;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  background: var(--bg);
+  justify-content: center;
+  gap: 28px;
+  text-align: center;
+  padding: 0;
+  background: none;
+}
+
+/* Fade suave separado — não interfere no layout */
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 35%;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(251,251,251,0.6) 60%,
+    rgba(251,251,251,1) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Garante que título e botão ficam acima do fade */
+.hero-title, .btn-vip {
+  position: relative;
+  z-index: 2;
 }
 
 .hero-title {
   font-family: var(--font-gilroy);
-  font-size: 22px;
-  font-weight: 500;
-  letter-spacing: 1.5px;
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: 3px;
   line-height: 1.4;
   color: var(--dark);
   text-transform: uppercase;
+  text-shadow: 0 1px 12px rgba(255,255,255,0.6);
 }
 
 .btn-vip {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  padding: 14px 32px;
+  padding: 14px 36px;
   background: var(--btn);
   color: var(--text-white);
   text-decoration: none;
@@ -112,7 +136,7 @@ body {
   font-size: 13px;
   font-weight: 500;
   letter-spacing: 1px;
-  border-radius: 2px;
+  border-radius: 50px;
   white-space: nowrap;
   flex-shrink: 0;
   transition: background 0.2s ease;
@@ -150,8 +174,10 @@ body {
   gap: 26px;
   padding: 80px 48px;
   text-align: center;
-  background: rgba(42, 28, 18, 0.62);
+  background: rgba(90, 75, 60, 0.55);
+  backdrop-filter: blur(2px);
   width: 100%;
+  min-height: 55vh;
   justify-content: center;
 }
 
@@ -208,6 +234,15 @@ body {
   justify-content: center;
   padding: 56px 72px;
   gap: 18px;
+}
+
+.service--vendas .service-content {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.service--vendas .btn-outline {
+  align-self: flex-end;
 }
 
 .service-title {
@@ -354,6 +389,15 @@ body {
 
   .service--vendas {
     flex-direction: column-reverse;
+  }
+
+  .service--vendas .service-content {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .service--vendas .btn-outline {
+    align-self: flex-start;
   }
 
   .service-image {
